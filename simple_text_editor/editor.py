@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'editor.ui'
 #
-# Created: Thu Mar 01 08:35:04 2012
+# Created: Fri Mar 02 08:24:22 2012
 #      by: PyQt4 UI code generator 4.9.1
 #
 # WARNING! All changes made in this file will be lost!
@@ -23,19 +23,20 @@ class Ui_notepad(object):
         self.editor_window = QtGui.QTextEdit(self.centralwidget)
         self.editor_window.setGeometry(QtCore.QRect(10, 40, 781, 531))
         self.editor_window.setObjectName(_fromUtf8("editor_window"))
-        self.widget = QtGui.QWidget(self.centralwidget)
-        self.widget.setGeometry(QtCore.QRect(10, 2, 781, 41))
-        self.widget.setObjectName(_fromUtf8("widget"))
-        self.horizontalLayout = QtGui.QHBoxLayout(self.widget)
+        self.layoutWidget = QtGui.QWidget(self.centralwidget)
+        self.layoutWidget.setGeometry(QtCore.QRect(10, 2, 781, 41))
+        self.layoutWidget.setObjectName(_fromUtf8("layoutWidget"))
+        self.horizontalLayout = QtGui.QHBoxLayout(self.layoutWidget)
         self.horizontalLayout.setMargin(0)
         self.horizontalLayout.setObjectName(_fromUtf8("horizontalLayout"))
-        self.button_open = QtGui.QPushButton(self.widget)
+        self.button_open = QtGui.QPushButton(self.layoutWidget)
         self.button_open.setObjectName(_fromUtf8("button_open"))
         self.horizontalLayout.addWidget(self.button_open)
-        self.button_save = QtGui.QPushButton(self.widget)
+        self.button_save = QtGui.QPushButton(self.layoutWidget)
+        self.button_save.setEnabled(False)
         self.button_save.setObjectName(_fromUtf8("button_save"))
         self.horizontalLayout.addWidget(self.button_save)
-        self.pushButton_2 = QtGui.QPushButton(self.widget)
+        self.pushButton_2 = QtGui.QPushButton(self.layoutWidget)
         self.pushButton_2.setObjectName(_fromUtf8("pushButton_2"))
         self.horizontalLayout.addWidget(self.pushButton_2)
         notepad.setCentralWidget(self.centralwidget)

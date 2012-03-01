@@ -24,7 +24,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -43,6 +43,9 @@
      </item>
      <item>
       <widget class="QPushButton" name="button_save">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
        <property name="text">
         <string>Save</string>
        </property>
@@ -79,8 +82,8 @@
    <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>524</x>
-     <y>27</y>
+     <x>789</x>
+     <y>52</y>
     </hint>
     <hint type="destinationlabel">
      <x>409</x>
