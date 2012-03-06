@@ -14,30 +14,108 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QTreeWidget" name="treeWidget">
+   <widget class="QTabWidget" name="pkgTabs">
     <property name="geometry">
      <rect>
       <x>10</x>
       <y>10</y>
       <width>781</width>
-      <height>561</height>
+      <height>551</height>
      </rect>
     </property>
-    <column>
-     <property name="text">
-      <string>Col0</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>Col1</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>Col2</string>
-     </property>
-    </column>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="tab">
+     <attribute name="title">
+      <string>All Packages</string>
+     </attribute>
+     <widget class="QTreeWidget" name="allList">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>751</width>
+        <height>501</height>
+       </rect>
+      </property>
+      <column>
+       <property name="text">
+        <string>Col0</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Col1</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Col2</string>
+       </property>
+      </column>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_2">
+     <attribute name="title">
+      <string>Active</string>
+     </attribute>
+     <widget class="QTreeWidget" name="activeList">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>751</width>
+        <height>501</height>
+       </rect>
+      </property>
+      <column>
+       <property name="text">
+        <string>Col0</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Col1</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Col2</string>
+       </property>
+      </column>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_3">
+     <attribute name="title">
+      <string>Not Active</string>
+     </attribute>
+     <widget class="QTreeWidget" name="notActiveList">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>751</width>
+        <height>501</height>
+       </rect>
+      </property>
+      <column>
+       <property name="text">
+        <string>Col0</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Col1</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Col2</string>
+       </property>
+      </column>
+     </widget>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
