@@ -2,10 +2,20 @@
 #-*- coding: utf-8 -*-
 
 import sys
+import pkg_resources
+import cPickle
+
+from os.path import isfile
+from os.path import expanduser
+from datetime import timedelta
+from datetime import datetime
 
 from PyQt4 import QtCore, QtGui
-from list import Ui_QYolk
 from yolk import yolklib
+from yolk.cli import get_pkglist
+from yolk.yolklib import get_highest_version, Distributions
+from yolk.pypi import CheeseShop
+from list import Ui_QYolk
 
 
 class StartQt4(QtGui.QMainWindow):
@@ -65,6 +75,40 @@ class StartQt4(QtGui.QMainWindow):
             self.ui.infoLabel.setText("<b>QYolk</b>: Browsing active packages")
         elif tab_id == 2:
             self.ui.infoLabel.setText("<b>QYolk</b>: Browsing not active packages (older versions)")
+        elif tab_id == 3:
+            self.ui.infoLabel.setText("<b>QYolk</b>: Browsing available updates")
+
+
+def get_fresh_updates(package_name="", version=""):
+    userpath = expanduser("~")
+    now = datetime.now()
+
+    # Do we have a cache ?
+    if isfile(userpath + "/.qyolk"):
+        f = open(userpath + "/.qyolk", "r")
+        cache = cPickle.load(f)
+        check_time = now - timedelta(hours=24)
+        if cache[0] > check_time:
+            # fresh cache, use it
+            return cache[1]
+
+    # No cache, get updates and create the cache
+    ret = []
+    pypi = CheeseShop()
+    dists = Distributions()
+    for pkg in get_pkglist():
+        for (dist, active) in dists.get_distributions("all", pkg, dists.get_highest_installed(pkg)):
+            (project_name, versions) = pypi.query_versions_pypi(dist.project_name)
+            if versions:
+                newest = get_highest_version(versions)
+                if newest != dist.version:
+                    if pkg_resources.parse_version(dist.version) < pkg_resources.parse_version(newest):
+                        ret.append([project_name, dist.version, newest])
+
+    f = open(userpath + "/.qyolk", "w")
+    cPickle.dump([now, ret], f)
+
+    return ret
 
 
 if __name__ == "__main__":

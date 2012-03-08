@@ -18,9 +18,9 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>10</y>
+      <y>40</y>
       <width>781</width>
-      <height>551</height>
+      <height>521</height>
      </rect>
     </property>
     <property name="currentIndex">
@@ -36,7 +36,7 @@
         <x>10</x>
         <y>10</y>
         <width>751</width>
-        <height>501</height>
+        <height>481</height>
        </rect>
       </property>
       <column>
@@ -66,7 +66,7 @@
         <x>10</x>
         <y>10</y>
         <width>751</width>
-        <height>501</height>
+        <height>481</height>
        </rect>
       </property>
       <column>
@@ -96,7 +96,7 @@
         <x>10</x>
         <y>10</y>
         <width>751</width>
-        <height>501</height>
+        <height>481</height>
        </rect>
       </property>
       <column>
@@ -116,6 +116,49 @@
       </column>
      </widget>
     </widget>
+    <widget class="QWidget" name="tab_4">
+     <attribute name="title">
+      <string>Updates</string>
+     </attribute>
+     <widget class="QTreeWidget" name="updatesList">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>751</width>
+        <height>481</height>
+       </rect>
+      </property>
+      <column>
+       <property name="text">
+        <string>Col0</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Col1</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Col2</string>
+       </property>
+      </column>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="infoLabel">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>10</y>
+      <width>541</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
